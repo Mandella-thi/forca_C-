@@ -10,11 +10,86 @@ class forca // Define a classe principal
         string palavra = adivinhar[permuta.Next(adivinhar.Lenghth)];
         string ocultapalavra = new string('_', palavra.Lenghth);
         int chances = 6;
+        int erra = 0;
         bool acerta = false;
-        while (chances > 0 && !acerta)
+        string[] forca1 = new string[] { @"
+  + ------+
+         |
+         |
+         |
+         |
+         |
++--------+", @"
+  + ------+
+  |      |
+         |
+         |
+         |
+         |
++--------+", @"
+  + ------+
+  |      |
+  o      |
+         |
+         |
+         |
++--------+", @"
+  + ------+
+  |      |
+  o      |
+  |      |
+         |
+         |
++--------+", @"
+  + ------+
+  |      |
+  o      |
+ /|      |
+         |
+         |
++--------+", @"
+  +------+
+  |      |
+  o      |
+ /|\     |
+         |
+         |
++--------+ ",@"
+  +------+
+  |      |
+  o      |
+ /|\     |
+ /       |
+         |
++--------+ ", @"
+  +------+
+  |      |
+  o      |
+ /|\     |
+ / \     |
+         |
++--------+ "};
+    while (chances > 0 && !acerta)
+    {
+      console.WriteLine(forca1[erra]);
+      console.WriteLine("A palavra da vez é: " + ocultapalavra);
+      console.writeLine("Numero de chances: " + chances);
+      console.write("Chute uma letra: ");
+      char letra = Console.readline();
+      letra = char.ToLower(letra);
+      bool acertou = false;
+      for (int i = 0; i < palavra.Lenghth; i++)
+      {
+        if (palavra[i] == letra)
         {
-            
-         } 
+          ocultapalavra = ocultapalavra.Remove(i, 1).Insert(i, letra.ToSring());
+          acertou = true;
+          
+        }
+      }
+      
+
+        } 
 
         
     }
