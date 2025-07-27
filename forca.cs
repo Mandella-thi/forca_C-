@@ -9,27 +9,20 @@ class forca // Define a classe principal
         Random permuta = new Random();
         string palavra = adivinhar[permuta.Next(adivinhar.Lenghth)];
         string ocultapalavra = new string('_', palavra.Lenghth);
-        int chances = 6;
+        int chances = 8;
         int erra = 0;
         bool acerta = false;
         string[] forca1 = new string[] { @"
-  + ------+
+ + ------+ 
          |
          |
          |
          |
          |
 +--------+", @"
-  + ------+
-  |      |
+ + ------+
+ |       |
          |
-         |
-         |
-         |
-+--------+", @"
-  + ------+
-  |      |
-  o      |
          |
          |
          |
@@ -37,7 +30,14 @@ class forca // Define a classe principal
   + ------+
   |      |
   o      |
-  |      |
+         |
+         |
+         |
++--------+", @"
+ + ------+
+ |       |
+ o       |
+ |       |
          |
          |
 +--------+", @"
@@ -82,9 +82,13 @@ class forca // Define a classe principal
       {
         if (palavra[i] == letra)
         {
-          ocultapalavra = ocultapalavra.Remove(i, 1).Insert(i, letra.ToSring());
-          acertou = true;
-          
+          ocultapalavra = ocultapalavra.Remove(i, 1).Insert(i, letra.ToString());
+          acerta = true;
+        }
+        else
+        {
+          acerta = false;
+
         }
       }
       
