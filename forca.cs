@@ -77,21 +77,19 @@ class forca // Define a classe principal
       console.write("Chute uma letra: ");
       char letra = Console.readline();
       letra = char.ToLower(letra);
-      bool acertou = false;
-      for (int i = 0; i < palavra.Lenghth; i++)
-      {
-        if (palavra[i] == letra)
-        {
-          ocultapalavra = ocultapalavra.Remove(i, 1).Insert(i, letra.ToString());
-          acerta = true;
-        }
-        else
-        {
-          acerta = false;
+            string entrada = Console.ReadLine();
 
-        }
-      }
-      
+            if (string.IsNullOrWhiteSpace(entrada))
+            {
+                Console.WriteLine("Entrada inválida. Tente novamente.");
+                continue;
+            }
+            char letra = char.ToLower(entrada[0]);
+
+            bool letraCorreta = false;
+
+            for (int i = 0; i < palavra.Length; i++) { }
+
 
         } 
 
