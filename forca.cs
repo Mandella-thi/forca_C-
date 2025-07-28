@@ -88,11 +88,38 @@ class forca // Define a classe principal
 
             bool letraCorreta = false;
 
-            for (int i = 0; i < palavra.Length; i++) { }
+            for (int i = 0; i < palavra.Length; i++) 
+            {
+                if (palavra[i] == letra && ocultapalavra[i] == '_')
+                {
+                    ocultapalavra = ocultapalavra.Remove(i, 1).Insert(i, letra.ToString());
+                    letraCorreta = true;
+                }
+            }
 
+            if (!letraCorreta)
+            {
+                erros++;
+                chances--;
+                Console.WriteLine("Letra incorreta!");
+            }
 
-        } 
+            if (!ocultapalavra.Contains("_"))
+            {
+                acertou = true;
+            }
 
-        
+            Console.WriteLine();
+        }
+
+        if (acertou)
+        {
+            Console.WriteLine("Parabéns! Você acertou a palavra: " + palavra);
+        }
+        else
+        {
+            Console.WriteLine(forca1[7]);
+            Console.WriteLine("Game Over! A palavra era: " + palavra);
+        }
     }
 }
